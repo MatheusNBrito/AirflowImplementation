@@ -19,7 +19,10 @@ export PYTHON_VERSION="$(python --version | cut -d ' ' -f 2 | cut -d '.' -f 1-2)
 export CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-${PYTHON_VERSION}.txt"
 
 pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
+
+
 Tópicos Abordados
+
 1. XCom DAG
 Objetivo: Transferir dados entre tarefas usando XCom.
 Descrição: Implementei um DAG que utiliza Python e Bash para empurrar e puxar dados entre tarefas, permitindo um fluxo de trabalho dinâmico e baseado em condições.
