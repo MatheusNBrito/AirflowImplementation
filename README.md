@@ -4,11 +4,59 @@
 
 ### Pré-requisitos:
 - Tenha Python (3.6 ou superior) e pip instalados em sua máquina.
+- Instale o Docker (veja a seção abaixo).
 
 ### Criar um ambiente virtual (opcional, mas recomendado):
 ``bash
 python -m venv airflow_venv
 source airflow_venv/bin/activate  # No Windows use: airflow_venv\Scripts\activate
+Instalar o Docker:
+No Linux:
+Atualize o índice de pacotes:
+
+bash
+Copiar código
+sudo apt-get update
+Instale os pacotes necessários:
+
+bash
+Copiar código
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
+Adicione a chave GPG do Docker:
+
+bash
+Copiar código
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+Adicione o repositório do Docker:
+
+bash
+Copiar código
+sudo add-apt-repository \
+    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+    $(lsb_release -cs) \
+    stable"
+Instale o Docker:
+
+bash
+Copiar código
+sudo apt-get update
+sudo apt-get install docker-ce
+Verifique se o Docker está instalado corretamente:
+
+bash
+Copiar código
+sudo docker run hello-world
+No Windows:
+Baixe e instale o Docker Desktop.
+Siga as instruções de instalação do assistente.
+Verifique se o Docker está instalado corretamente executando o seguinte comando no PowerShell:
+bash
+Copiar código
+docker run hello-world
 Instalar o Apache Airflow:
 Use a seguinte linha de comando para instalar o Airflow. Ajuste a versão conforme necessário:
 
@@ -21,8 +69,7 @@ export CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constrai
 pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
 
 
-Tópicos Abordados
-
+# Tópicos Abordados
 1. XCom DAG
 Objetivo: Transferir dados entre tarefas usando XCom.
 Descrição: Implementei um DAG que utiliza Python e Bash para empurrar e puxar dados entre tarefas, permitindo um fluxo de trabalho dinâmico e baseado em condições.
