@@ -91,10 +91,13 @@ Objetivo: Gerenciar e atualizar datasets utilizando Airflow.
 Descrição: Utilizei o conceito de Dataset do Airflow para atualizar e ler arquivos em um fluxo de trabalho, mostrando a capacidade de manipular dados de forma eficiente e organizada.
 
 Tecnologias Utilizadas
+
 Apache Airflow: Para orquestração de workflows.
 Python: Para tarefas de processamento e integração.
 Bash: Para execução de comandos do sistema.
 PostgreSQL: Para armazenamento de dados.
 Docker: Para execução de tarefas em ambientes isolados.
+
 Conclusão
+
 Esses projetos me permitiram aprofundar meus conhecimentos em orquestração de workflows, manipulação de dados e automação de processos.
